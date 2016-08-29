@@ -15,10 +15,17 @@ import com.example.toad.razeofrule.GLRender;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+
 public class MainActivity extends AppCompatActivity implements GLSurfaceView.Renderer {
     // Remove the below line after defining your own ad unit ID.
     private static final String TOAST_TEXT = "Test ads are being shown. "
             + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
+
+    //Public Variables
+    public boolean loop_active;
+public texture texture[5]
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +52,14 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
         adView.loadAd(adRequest);
 
         Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
+        loop_active = true;
+
+
 
 
     }
+
+
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -62,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements GLSurfaceView.Ren
     @Override
     public void onDrawFrame(GL10 gl) {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+
+
+
+
     }
 
 }
